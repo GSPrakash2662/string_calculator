@@ -136,19 +136,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-// void main() {
-//   // Example usages:
-//   print(add("")); // Output: 0
-//   print(add("1")); // Output: 1
-//   print(add("1,5")); // Output: 6
-//   print(add("1\n2,3")); // Output: 6
-//   print(add("//;\n1;2")); // Output: 3
-//   print(add("//[***]\n1***2***3")); // Output: 6
-//
-//   try {
-//     print(add("//;\n1;2;-3"));
-//   } catch (e) {
-//     print(e); // Negative numbers not allowed: -3
-//   }
-// }
