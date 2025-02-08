@@ -73,6 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
       var value = int.tryParse(number.trim());
 
       if (value == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Invalid number: '$number'"),
+            duration: Duration(seconds: 2),
+          ),
+        );
         throw FormatException("Invalid number: '$number'");
       }
 
@@ -84,6 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     if (negativeNumbers.isNotEmpty) {
+       SnackBar(
+        content: Text("Negative numbers not allowed: ${negativeNumbers.join(',')}"),
+        duration: Duration(seconds: 2),
+      );
       throw NegativeNumberException("Negative numbers not allowed: ${negativeNumbers.join(',')}");
     }
 
@@ -118,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
             TextButton(
                 onPressed: () {
                   setState(() {
-                    sumOfString = (input.text.isNotEmpty) ? add(input.text) : 0;
+                    sumOfString = (input.text.isNotEmpty) ? add("${input.text}") : 0;
                   });
                 },
               style: ButtonStyle(
